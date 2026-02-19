@@ -12,26 +12,26 @@ layout {
   tab name="agent-teams" {
   pane split_direction="vertical" {
     pane {
-      name "sei"
+      name "hq"
       command "multiagent"
-      args "pane" "../multiagent_worktrees/team-member/sei" "team-member/sei" "--instruction" "Read ~/.config/teams/instruction_leader.md and understand your role."
+      args "pane" "../multiagent_worktrees/team-member/hq" "team-member/hq" "--instruction" "Read ~/.config/teams/instruction_leader.md and understand your role."
       size "30%"
     }
     pane split_direction="horizontal" {
       pane {
-        name "shin"
+        name "alpha"
         command "multiagent"
-        args "pane" "../multiagent_worktrees/team-member/shin" "team-member/shin" "--instruction" "Read ~/.config/teams/instruction_member.md and understand your role."
+        args "pane" "../multiagent_worktrees/team-member/alpha" "team-member/alpha" "--instruction" "Read ~/.config/teams/instruction_member.md and understand your role. You are Alpha."
       }
       pane {
-        name "ouhon"
+        name "bravo"
         command "multiagent"
-        args "pane" "../multiagent_worktrees/team-member/ouhon" "team-member/ouhon" "--instruction" "Read ~/.config/teams/instruction_member.md and understand your role."
+        args "pane" "../multiagent_worktrees/team-member/bravo" "team-member/bravo" "--instruction" "Read ~/.config/teams/instruction_member.md and understand your role. You are Bravo."
       }
       pane {
-        name "mouten"
+        name "charlie"
         command "multiagent"
-        args "pane" "../multiagent_worktrees/team-member/mouten" "team-member/mouten" "--instruction" "Read ~/.config/teams/instruction_member.md and understand your role."
+        args "pane" "../multiagent_worktrees/team-member/charlie" "team-member/charlie" "--instruction" "Read ~/.config/teams/instruction_member.md and understand your role. You are Charlie."
       }
     }
   }

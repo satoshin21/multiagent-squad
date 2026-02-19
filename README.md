@@ -45,8 +45,8 @@ Running `multiagent` without arguments is equivalent to `multiagent launch`.
 Change into the specified worktree and launch Claude. Intended to be called from Zellij pane commands.
 
 ```bash
-multiagent instruction --worktree team-member/sei --instruction ~/.config/teams/instruction_sei.md
-multiagent instruction --worktree team-member/shin
+multiagent instruction --worktree team-member/hq --instruction ~/.config/teams/instruction_leader.md
+multiagent instruction --worktree team-member/alpha
 ```
 
 | Flag | Description |
