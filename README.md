@@ -2,7 +2,7 @@
 
 Multi-agent team launcher for [Zellij](https://zellij.dev/) + [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
 
-Creates a Zellij session with a multi-pane team layout, launching isolated Claude Code instances in separate git worktrees. HQ (commander) delegates tasks to Alpha / Bravo / Charlie (team members), enabling parallel development through a team-of-agents pattern.
+Creates a Zellij session with a multi-pane team layout, launching isolated Claude Code instances in separate git worktrees. Chief (commander) delegates tasks to Member-Braze / Member-Storm / Member-Frost (team members), enabling parallel development through a team-of-agents pattern.
 
 ## Prerequisites
 
@@ -24,13 +24,13 @@ Make sure `$GOPATH/bin` is in your `PATH`.
 multiagent init
 ```
 
-Creates the following default config files in `~/.config/teams/` (existing files are skipped).
+Creates the following default config files in `~/.config/multiagent-squad/` (existing files are skipped).
 
 | File | Description |
 |------|-------------|
-| `teams.kdl` | Zellij layout definition |
-| `instruction_leader.md` | Claude Code instruction for HQ (commander) |
-| `instruction_member.md` | Claude Code instruction for members (Alpha / Bravo / Charlie) |
+| `squad.kdl` | Zellij layout definition |
+| `instruction_leader.md` | Claude Code instruction for Chief (commander) |
+| `instruction_member.md` | Claude Code instruction for members (Member-Braze / Member-Storm / Member-Frost) |
 
 Edit these files directly to customize the layout or instructions.
 
@@ -46,7 +46,7 @@ Running without arguments creates a Zellij session with the default layout. The 
 
 | Flag | Description |
 |------|-------------|
-| `--layout <path>` | Path to a custom layout file (default: `~/.config/teams/teams.kdl`) |
+| `--layout <path>` | Path to a custom layout file (default: `~/.config/multiagent-squad/squad.kdl`) |
 | `--force` | Delete and recreate the session if one with the same name already exists |
 
 ```bash
@@ -69,7 +69,7 @@ multiagent pane <worktree-path> <branch> [flags]
 
 ### init
 
-Creates default config files in `~/.config/teams/`.
+Creates default config files in `~/.config/multiagent-squad/`.
 
 ```bash
 multiagent init
@@ -84,11 +84,11 @@ The default layout consists of two tabs: `agent-teams` and `review`.
 ```
 agent-teams tab
 ┌──────────┬───────────────────────┐
-│          │        alpha          │
+│          │     member-braze      │
 │          ├───────────────────────┤
-│    hq    │        bravo          │
+│  chief   │     member-storm      │
 │   (30%)  ├───────────────────────┤
-│          │       charlie         │
+│          │     member-frost      │
 └──────────┴───────────────────────┘
 
 review tab
@@ -107,10 +107,10 @@ Agents communicate by sending messages to other panes via Zellij's `send-to-pane
 
 | Pane ID | Agent |
 |---------|-------|
-| 0 | hq |
-| 1 | alpha |
-| 2 | bravo |
-| 3 | charlie |
+| 0 | chief |
+| 1 | member-braze |
+| 2 | member-storm |
+| 3 | member-frost |
 
 ## License
 

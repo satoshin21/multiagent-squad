@@ -30,7 +30,7 @@ func runInit(cmd *cobra.Command, args []string) error {
 		name    string
 		content []byte
 	}{
-		{"teams.kdl", embed.TeamsKDL},
+		{"squad.kdl", embed.SquadKDL},
 		{"instruction_leader.md", embed.InstructionLeader},
 		{"instruction_member.md", embed.InstructionMember},
 	}

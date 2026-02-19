@@ -20,7 +20,7 @@ var rootCmd = &cobra.Command{
 }
 
 func init() {
-	rootCmd.Flags().StringVar(&layoutPath, "layout", "", "zellij layout kdl file path (default: ~/.config/teams/teams.kdl)")
+	rootCmd.Flags().StringVar(&layoutPath, "layout", "", "zellij layout kdl file path (default: ~/.config/multiagent-squad/squad.kdl)")
 	rootCmd.Flags().BoolVar(&force, "force", false, "delete existing session with the same name and create a new one")
 	rootCmd.AddCommand(paneCmd)
 }

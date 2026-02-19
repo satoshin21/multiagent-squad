@@ -22,9 +22,9 @@ func ExpandTilde(path string) string {
 }
 
 func DefaultConfigDir() string {
-	return ExpandTilde("~/.config/teams")
+	return ExpandTilde("~/.config/multiagent-squad")
 }
 
 func DefaultLayoutPath() string {
-	return filepath.Join(DefaultConfigDir(), "teams.kdl")
+	return filepath.Join(DefaultConfigDir(), "squad.kdl")
 }

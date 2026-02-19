@@ -9,29 +9,29 @@ layout {
         plugin location="zellij:status-bar"
     }
   }
-  tab name="agent-squad" {
+  tab name="agent-teams" {
   pane split_direction="vertical" {
     pane {
       name "chief"
       command "multiagent"
-      args "pane" "../multiagent_worktrees/team-member/chief" "team-member/chief" "--instruction" "Read ~/.config/teams/instruction_leader.md and understand your role."
+      args "pane" "../multiagent_worktrees/team-member/chief" "team-member/chief" "--instruction" "Read ~/.config/multiagent-squad/instruction_leader.md and understand your role."
       size "30%"
     }
     pane split_direction="horizontal" {
       pane {
         name "member-braze"
         command "multiagent"
-        args "pane" "../multiagent_worktrees/team-member/member-braze" "team-member/member-braze" "--instruction" "Read ~/.config/teams/instruction_member.md and understand your role. You are Member-Braze."
+        args "pane" "../multiagent_worktrees/team-member/member-braze" "team-member/member-braze" "--instruction" "Read ~/.config/multiagent-squad/instruction_member.md and understand your role. You are Member-Braze."
       }
       pane {
         name "member-storm"
         command "multiagent"
-        args "pane" "../multiagent_worktrees/team-member/member-storm" "team-member/member-storm" "--instruction" "Read ~/.config/teams/instruction_member.md and understand your role. You are Member-Storm."
+        args "pane" "../multiagent_worktrees/team-member/member-storm" "team-member/member-storm" "--instruction" "Read ~/.config/multiagent-squad/instruction_member.md and understand your role. You are Member-Storm."
       }
       pane {
         name "member-frost"
         command "multiagent"
-        args "pane" "../multiagent_worktrees/team-member/member-frost" "team-member/member-frost" "--instruction" "Read ~/.config/teams/instruction_member.md and understand your role. You are Member-Frost."
+        args "pane" "../multiagent_worktrees/team-member/member-frost" "team-member/member-frost" "--instruction" "Read ~/.config/multiagent-squad/instruction_member.md and understand your role. You are Member-Frost."
       }
     }
   }

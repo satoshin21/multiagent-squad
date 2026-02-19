@@ -42,7 +42,7 @@ func TestDefaultConfigDir(t *testing.T) {
 	}
 
 	got := DefaultConfigDir()
-	want := filepath.Join(home, ".config/teams")
+	want := filepath.Join(home, ".config/multiagent-squad")
 	if got != want {
 		t.Errorf("DefaultConfigDir() = %q, want %q", got, want)
 	}
@@ -55,7 +55,7 @@ func TestDefaultLayoutPath(t *testing.T) {
 	}
 
 	got := DefaultLayoutPath()
-	want := filepath.Join(home, ".config/teams/teams.kdl")
+	want := filepath.Join(home, ".config/multiagent-squad/squad.kdl")
 	if got != want {
 		t.Errorf("DefaultLayoutPath() = %q, want %q", got, want)
 	}
