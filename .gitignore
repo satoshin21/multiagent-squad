@@ -1,0 +1,30 @@
+# Binaries
+multiagent
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary
+*.test
+
+# Output of the go coverage tool
+*.out
+coverage.html
+
+# Dependency directories
+vendor/
+
+# IDE / Editor
+.idea/
+*.swp
+*.swo
+.vscode/
+
+# Local config
+.claude/settings.local.json
+
+# OS
+.DS_Store
+Thumbs.db
