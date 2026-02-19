@@ -13,37 +13,38 @@ layout {
   pane split_direction="vertical" {
     pane {
       name "sei"
-      command "claude_instruction"
-      args "--instruction" "~/.config/teams/instruction_leader.md" "--worktree" "team-member/sei"
+      command "multiagent"
+      args "pane" "team-member/sei" "--instruction" "~/.config/teams/instruction_leader.md"
       size "30%"
     }
     pane split_direction="horizontal" {
       pane {
         name "shin"
-        command "claude_instruction"
-        args "--instruction" "Read ~/.config/teams/instruction_member.md and understand your role." "--worktree" "team-member/shin"
+        command "multiagent"
+        args "pane" "team-member/shin" "--instruction" "Read ~/.config/teams/instruction_member.md and understand your role."
       }
       pane {
         name "ouhon"
-        command "claude_instruction"
-        args "--instruction" "Read ~/.config/teams/instruction_member.md and understand your role." "--worktree" "team-member/ouhon"
+        command "multiagent"
+        args "pane" "team-member/ouhon" "--instruction" "Read ~/.config/teams/instruction_member.md and understand your role."
       }
       pane {
         name "mouten"
-        command "claude_instruction"
-        args "--instruction" "Read ~/.config/teams/instruction_member.md and understand your role." "--worktree" "team-member/mouten"
+        command "multiagent"
+        args "pane" "team-member/mouten" "--instruction" "Read ~/.config/teams/instruction_member.md and understand your role."
       }
     }
   }
   }
   tab split_direction="vertical" name="review" {
     pane name="review" {
-      cwd "review"
+      command "multiagent"
+      args "pane" "review"
     }
     pane {
       name "review claude"
-      command "claude_instruction"
-      args "--instruction" "" "--worktree" "review"
+      command "multiagent"
+      args "pane" "review" "--claude-without-instruction"
     }
   }
 }

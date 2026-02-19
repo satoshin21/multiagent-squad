@@ -9,7 +9,8 @@ import (
 )
 
 var (
-	instruction string
+	instruction             string
+	claudeWithoutInstruction bool
 )
 
 var paneCmd = &cobra.Command{
@@ -21,6 +22,7 @@ var paneCmd = &cobra.Command{
 
 func init() {
 	paneCmd.Flags().StringVar(&instruction, "instruction", "", "instruction markdown file path")
+	paneCmd.Flags().BoolVar(&claudeWithoutInstruction, "claude-without-instruction", false, "launch claude without instruction")
 }
 
 func runPane(cmd *cobra.Command, args []string) error {
@@ -33,6 +35,10 @@ func runPane(cmd *cobra.Command, args []string) error {
 
 	if err := os.Chdir(wtPath); err != nil {
 		return fmt.Errorf("failed to change directory to %s: %w", wtPath, err)
+	}
+
+	if claudeWithoutInstruction {
+		return runner.LaunchClaude("")
 	}
 
 	if instruction == "" {

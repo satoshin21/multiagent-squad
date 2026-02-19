@@ -5,8 +5,6 @@ import (
 	"os"
 	"os/exec"
 	"syscall"
-
-	"github.com/satoshin21/multiagent/internal/config"
 )
 
 func LaunchClaude(instruction string) error {
@@ -18,10 +16,7 @@ func LaunchClaude(instruction string) error {
 	args := []string{"claude", "--permission-mode", "acceptEdits"}
 
 	if instruction != "" {
-		expanded := config.ExpandTilde(instruction)
-		if _, err := os.Stat(expanded); err == nil {
-			args = append(args, instruction)
-		}
+		args = append(args, instruction)
 	}
 
 	return syscall.Exec(binPath, args, os.Environ())
