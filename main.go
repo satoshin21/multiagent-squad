@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/satoshin21/multiagent/cmd"
+	"github.com/satoshin21/multiagent-squad/cmd"
 )
 
 func main() {

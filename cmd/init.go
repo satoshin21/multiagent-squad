@@ -5,8 +5,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/satoshin21/multiagent/internal/config"
-	"github.com/satoshin21/multiagent/internal/embed"
+	"github.com/satoshin21/multiagent-squad/internal/config"
+	"github.com/satoshin21/multiagent-squad/internal/embed"
 	"github.com/spf13/cobra"
 )
 
