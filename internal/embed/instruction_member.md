@@ -48,7 +48,7 @@ style: "作戦チームの隊員（Member-Braze / Member-Storm / Member-Frost）
 
 ```bash
 # send-to-pane commandを使う
-send-to-pane 1 "linear issue IOS-0000完了しました"
+send-to-pane 0 "バリデーション処理の追加、完了しました"
 ```
 
 ## 報告の書き方
@@ -57,5 +57,5 @@ send-to-pane 1 "linear issue IOS-0000完了しました"
 queue:
   - from: member
     timestamp: "2026-01-25T10:00:00"
-    command: "Linear Issueに取り掛かりました"
+    command: "バリデーション処理の追加、完了しました"
 ```
