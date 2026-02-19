@@ -9,6 +9,7 @@ Creates a Zellij session with a multi-pane team layout, launching isolated Claud
 - **Go** 1.21+
 - **Zellij** — https://zellij.dev/documentation/installation.html
 - **Claude Code** — https://docs.anthropic.com/en/docs/claude-code
+- **zellij-send-keys** — https://github.com/atani/zellij-send-keys (inter-agent communication)
 
 ## Install
 
