@@ -14,9 +14,9 @@ var (
 )
 
 var paneCmd = &cobra.Command{
-	Use:   "pane <worktree>",
+	Use:   "pane <worktree-path> <branch>",
 	Short: "Move to worktree and optionally launch claude with instruction",
-	Args:  cobra.ExactArgs(1),
+	Args:  cobra.ExactArgs(2),
 	RunE:  runPane,
 }
 
@@ -27,8 +27,9 @@ func init() {
 
 func runPane(cmd *cobra.Command, args []string) error {
 	worktreePath := args[0]
+	branch := args[1]
 
-	wtPath, err := runner.EnsureWorktree(worktreePath)
+	wtPath, err := runner.EnsureWorktree(worktreePath, branch)
 	if err != nil {
 		return fmt.Errorf("failed to ensure worktree: %w", err)
 	}
