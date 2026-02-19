@@ -13,7 +13,9 @@ Creates a Zellij session with a multi-pane team layout, launching isolated Claud
 ## Install
 
 ```bash
-go install github.com/satoshin21/multiagent@latest
+git clone https://github.com/satoshin21/multiagent-squad.git
+cd multiagent-squad
+go install
 ```
 
 Make sure `$GOPATH/bin` is in your `PATH`.
