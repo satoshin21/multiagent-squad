@@ -9,7 +9,7 @@ import (
 	"github.com/satoshin21/multiagent/internal/config"
 )
 
-func LaunchClaude(instructionFile string) error {
+func LaunchClaude(instruction string) error {
 	binPath, err := exec.LookPath("claude")
 	if err != nil {
 		return fmt.Errorf("claude not found: %w", err)
@@ -17,10 +17,10 @@ func LaunchClaude(instructionFile string) error {
 
 	args := []string{"claude", "--permission-mode", "acceptEdits"}
 
-	if instructionFile != "" {
-		expanded := config.ExpandTilde(instructionFile)
+	if instruction != "" {
+		expanded := config.ExpandTilde(instruction)
 		if _, err := os.Stat(expanded); err == nil {
-			args = append(args, "Read "+instructionFile+" and understand your role.")
+			args = append(args, instruction)
 		}
 	}
 
