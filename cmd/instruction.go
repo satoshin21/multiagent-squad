@@ -9,23 +9,23 @@ import (
 )
 
 var (
-	instruction     string
-	worktreePath    string
+	instruction string
 )
 
-var instructionCmd = &cobra.Command{
-	Use:   "instruction",
-	Short: "Move to worktree and launch claude with instruction",
-	RunE:  runInstruction,
+var paneCmd = &cobra.Command{
+	Use:   "pane <worktree>",
+	Short: "Move to worktree and optionally launch claude with instruction",
+	Args:  cobra.ExactArgs(1),
+	RunE:  runPane,
 }
 
 func init() {
-	instructionCmd.Flags().StringVar(&instruction, "instruction", "", "instruction markdown file path")
-	instructionCmd.Flags().StringVar(&worktreePath, "worktree", "", "worktree directory path (required)")
-	_ = instructionCmd.MarkFlagRequired("worktree")
+	paneCmd.Flags().StringVar(&instruction, "instruction", "", "instruction markdown file path")
 }
 
-func runInstruction(cmd *cobra.Command, args []string) error {
+func runPane(cmd *cobra.Command, args []string) error {
+	worktreePath := args[0]
+
 	wtPath, err := runner.EnsureWorktree(worktreePath)
 	if err != nil {
 		return fmt.Errorf("failed to ensure worktree: %w", err)
@@ -33,6 +33,10 @@ func runInstruction(cmd *cobra.Command, args []string) error {
 
 	if err := os.Chdir(wtPath); err != nil {
 		return fmt.Errorf("failed to change directory to %s: %w", wtPath, err)
+	}
+
+	if instruction == "" {
+		return nil
 	}
 
 	return runner.LaunchClaude(instruction)
