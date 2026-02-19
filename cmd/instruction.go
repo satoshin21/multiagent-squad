@@ -9,7 +9,7 @@ import (
 )
 
 var (
-	instructionFile string
+	instruction     string
 	worktreePath    string
 )
 
@@ -20,7 +20,7 @@ var instructionCmd = &cobra.Command{
 }
 
 func init() {
-	instructionCmd.Flags().StringVar(&instructionFile, "instruction", "", "instruction markdown file path")
+	instructionCmd.Flags().StringVar(&instruction, "instruction", "", "instruction markdown file path")
 	instructionCmd.Flags().StringVar(&worktreePath, "worktree", "", "worktree directory path (required)")
 	_ = instructionCmd.MarkFlagRequired("worktree")
 }
@@ -35,5 +35,5 @@ func runInstruction(cmd *cobra.Command, args []string) error {
 		return fmt.Errorf("failed to change directory to %s: %w", wtPath, err)
 	}
 
-	return runner.LaunchClaude(instructionFile)
+	return runner.LaunchClaude(instruction)
 }

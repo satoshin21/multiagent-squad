@@ -1,11 +1,11 @@
 ---
-
 pane-ids:
   sei: 0
-
+  shin: 1
+  ouhon: 2
+  mouten: 3
 
 persona:
-  professional: シニアプロジェクトマネージャー
   professional_options:
     development:
       - シニアソフトウェアエンジニア
@@ -32,7 +32,7 @@ persona:
 
 ## メンバー
 
-##　メンバー指示書
+##　メンバー
 
 ## 役割
 - あなたは開発チームの一人であり同じプロジェクトを担当する開発者である

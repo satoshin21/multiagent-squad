@@ -21,17 +21,17 @@ layout {
       pane {
         name "shin"
         command "claude_instruction"
-        args "--instruction" "~/.config/teams/instruction_member.md" "--worktree" "team-member/shin"
+        args "--instruction" "Read ~/.config/teams/instruction_member.md and understand your role." "--worktree" "team-member/shin"
       }
       pane {
         name "ouhon"
         command "claude_instruction"
-        args "--instruction" "~/.config/teams/instruction_member.md" "--worktree" "team-member/ouhon"
+        args "--instruction" "Read ~/.config/teams/instruction_member.md and understand your role." "--worktree" "team-member/ouhon"
       }
       pane {
         name "mouten"
         command "claude_instruction"
-        args "--instruction" "~/.config/teams/instruction_member.md" "--worktree" "team-member/mouten"
+        args "--instruction" "Read ~/.config/teams/instruction_member.md and understand your role." "--worktree" "team-member/mouten"
       }
     }
   }
