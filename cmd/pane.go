@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/satoshin21/multiagent-squad/internal/runner"
+	"github.com/satoshin21/multiagent/internal/runner"
 	"github.com/spf13/cobra"
 )
 

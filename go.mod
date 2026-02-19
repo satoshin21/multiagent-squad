@@ -1,4 +1,4 @@
-module github.com/satoshin21/multiagent-squad
+module github.com/satoshin21/multiagent
 
 go 1.25.0
 

@@ -3,8 +3,8 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/satoshin21/multiagent-squad/internal/config"
-	"github.com/satoshin21/multiagent-squad/internal/runner"
+	"github.com/satoshin21/multiagent/internal/config"
+	"github.com/satoshin21/multiagent/internal/runner"
 	"github.com/spf13/cobra"
 )
 
