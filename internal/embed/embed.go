@@ -10,3 +10,6 @@ var InstructionLeader []byte
 
 //go:embed instruction_member.md
 var InstructionMember []byte
+
+//go:embed instruction_handler.md
+var InstructionHandler []byte

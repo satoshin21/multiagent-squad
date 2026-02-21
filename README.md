@@ -106,14 +106,17 @@ Each agent operates in an independent git worktree at `../multiagent_worktrees/t
 
 ### Inter-agent Communication
 
-Agents communicate by sending messages to other panes via Zellij's `send-to-pane`.
+Agents communicate by sending messages to other panes via Zellij's `send-to-pane-name`.
 
-| Pane ID | Agent |
-|---------|-------|
-| 0 | chief |
-| 1 | member-braze |
-| 2 | member-storm |
-| 3 | member-frost |
+| Pane Name | Agent |
+|-----------|-------|
+| chief | Chief (commander) |
+| member-braze | Member-Braze |
+| member-storm | Member-Storm |
+| member-frost | Member-Frost |
+| braze-handler | Braze-Handler (reviewer) |
+| storm-handler | Storm-Handler (reviewer) |
+| frost-handler | Frost-Handler (reviewer) |
 
 ## License
 

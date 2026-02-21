@@ -33,6 +33,7 @@ func runInit(cmd *cobra.Command, args []string) error {
 		{"squad.kdl", embed.SquadKDL},
 		{"instruction_leader.md", embed.InstructionLeader},
 		{"instruction_member.md", embed.InstructionMember},
+		{"instruction_handler.md", embed.InstructionHandler},
 	}
 
 	for _, f := range files {

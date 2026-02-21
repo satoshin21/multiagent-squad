@@ -34,6 +34,23 @@ layout {
         args "pane" "../multiagent_worktrees/team-member/member-frost" "team-member/member-frost" "--instruction" "Read ~/.config/multiagent-squad/instruction_member.md and understand your role. You are Member-Frost."
       }
     }
+    pane split_direction="horizontal" {
+      pane {
+        name "braze-handler"
+        command "multiagent"
+        args "pane" "../multiagent_worktrees/team-member/member-braze" "team-member/member-braze" "--agent" "gemini" "--instruction" "Read ~/.config/multiagent-squad/instruction_handler.md with `cat` command and understand your role. You are Braze-Handler, supporting Member-Braze."
+      }
+      pane {
+        name "storm-handler"
+        command "multiagent"
+        args "pane" "../multiagent_worktrees/team-member/member-storm" "team-member/member-storm" "--agent" "gemini" "--instruction" "Read ~/.config/multiagent-squad/instruction_handler.md with `cat` command and understand your role. You are Storm-Handler, supporting Member-Storm."
+      }
+      pane {
+        name "frost-handler"
+        command "multiagent"
+        args "pane" "../multiagent_worktrees/team-member/member-frost" "team-member/member-frost" "--agent" "gemini" "--instruction" "Read ~/.config/multiagent-squad/instruction_handler.md with `cat` command and understand your role. You are Frost-Handler, supporting Member-Frost."
+      }
+    }
   }
   }
   tab split_direction="vertical" name="review" {
