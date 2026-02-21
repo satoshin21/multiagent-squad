@@ -9,8 +9,9 @@ import (
 )
 
 var (
-	instruction             string
+	instruction              string
 	claudeWithoutInstruction bool
+	agentType                string
 )
 
 var paneCmd = &cobra.Command{
@@ -23,6 +24,7 @@ var paneCmd = &cobra.Command{
 func init() {
 	paneCmd.Flags().StringVar(&instruction, "instruction", "", "instruction markdown file path")
 	paneCmd.Flags().BoolVar(&claudeWithoutInstruction, "claude-without-instruction", false, "launch claude without instruction")
+	paneCmd.Flags().StringVar(&agentType, "agent", "claude", "agent type (claude, gemini)")
 }
 
 func runPane(cmd *cobra.Command, args []string) error {
@@ -38,13 +40,18 @@ func runPane(cmd *cobra.Command, args []string) error {
 		return fmt.Errorf("failed to change directory to %s: %w", wtPath, err)
 	}
 
-	if claudeWithoutInstruction {
-		return runner.LaunchClaude("")
+	switch agentType {
+	case "claude":
+		if claudeWithoutInstruction {
+			return runner.LaunchClaude("")
+		}
+		if instruction == "" {
+			return nil
+		}
+		return runner.LaunchClaude(instruction)
+	case "gemini":
+		return runner.LaunchGemini(instruction)
+	default:
+		return fmt.Errorf("unknown agent type: %s", agentType)
 	}
-
-	if instruction == "" {
-		return nil
-	}
-
-	return runner.LaunchClaude(instruction)
 }
