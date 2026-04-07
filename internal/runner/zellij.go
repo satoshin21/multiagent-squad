@@ -12,17 +12,31 @@ import (
 
 func SessionExists(sessionName string) (bool, error) {
 	cmd := exec.Command("zellij", "list-sessions", "--short")
-	out, err := cmd.Output()
-	if err != nil {
-		return false, fmt.Errorf("list-sessions: %w", err)
+	out, err := cmd.CombinedOutput()
+	return parseSessionExistsOutput(sessionName, out, err)
+}
+
+func parseSessionExistsOutput(sessionName string, out []byte, cmdErr error) (bool, error) {
+	output := string(out)
+	if cmdErr != nil {
+		if strings.Contains(output, "No active zellij sessions found") {
+			return false, nil
+		}
+		return false, fmt.Errorf("list-sessions: %w", cmdErr)
 	}
-	scanner := bufio.NewScanner(strings.NewReader(string(out)))
+
+	scanner := bufio.NewScanner(strings.NewReader(output))
 	for scanner.Scan() {
 		if strings.TrimSpace(scanner.Text()) == sessionName {
 			return true, nil
 		}
 	}
-	return false, scanner.Err()
+
+	if err := scanner.Err(); err != nil {
+		return false, err
+	}
+
+	return false, nil
 }
 
 func SessionName(suffix string) (string, error) {

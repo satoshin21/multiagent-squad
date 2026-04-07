@@ -13,7 +13,7 @@ func LaunchClaude(instruction string) error {
 		return fmt.Errorf("claude not found: %w", err)
 	}
 
-	args := []string{"claude", "--permission-mode", "acceptEdits"}
+	args := []string{"claude", "--permission-mode", "auto"}
 
 	if instruction != "" {
 		args = append(args, instruction)
